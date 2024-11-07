@@ -9,12 +9,12 @@
 <body>
     <div id="glowny">
         <header>
-            <h1><img src="kamilslimak.png" alt="kamilslimak">Super fajne KINO</h1>
+            <h1><img src="kamilslimak.png" alt="kamilslimak">Kamil Ślimak KINO</h1>
         </header>
         <nav>
         <ul id="menu">
-            <li class="menu"><a href="seanse.html">Seanse</a></li>
-            <li class="menu"><a href="kino.html">Informacje</a></li>
+            <li class="menu"><a href="info.php">Dodaj informacje</a></li>
+            <li class="menu"><a href="kino.php">Informacje</a></li>
             <li class="menu"><a href="kontakt.html">Kontakt</a></li>
             <li class="menu"><a href="mailto: mateusz.mering.mm@gmail.com">Wyślij maila</a></li>
             
@@ -92,5 +92,41 @@
      }
     }
     
+    if ($_POST["info"] == "klienci") {
+        $sql = "SELECT id, imie, nazwisko, mail FROM klienci";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+         while ($row = $result->fetch_assoc()) {
+             echo "id: " . $row["id"] . " - Imię: " . $row["imie"] . " - Nazwisko: " . $row["nazwisko"] . " - Mail: " . $row["mail"] . "<br>";
+         }
+     } else {
+         echo "0 results";
+     }
+    }
+
+    if ($_POST["info"] == "sale") {
+        $sql = "SELECT id, ilosc_miejsc FROM sale";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+         while ($row = $result->fetch_assoc()) {
+             echo "NR Sali: " . $row["id"] . " - Ilość miejsc: " . $row["ilosc_miejsc"] . "<br>";
+         }
+     } else {
+         echo "0 results";
+     }
+    }
+
+
+    if ($_POST["info"] == "sprzedawcy") {
+        $sql = "SELECT id, imie, nazwisko FROM sprzedawcy";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+         while ($row = $result->fetch_assoc()) {
+             echo "id: " . $row["id"] . " - Imię: " . $row["imie"] . " - Nazwisko: " . $row["nazwisko"]  . "<br>";
+         }
+     } else {
+         echo "0 results";
+     }
+    }
 
 ?>
