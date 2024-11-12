@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Dodawanie nowych filmów</title>
+    <title>Dodawanie nowych sprzedawców</title>
 </head>
 <body>
     <div id="glowny">
@@ -23,14 +23,12 @@
         <div id="tresc">
            
         <div id="prawy">
-            <h4>Dodawanie filmu</h4>
+            <h4>Dodawanie sprzedawcy</h4>
             <form method="post">
-                Tytuł: <input type="text" name="tytul"><br>
-                Reżyser: <input type="text" name="rezyser"><br>
-                Czas trwania: <input type="text" name="czas_trwania"><br>
-                <input type="submit" value="Dodaj">
+                Imię: <input type="text" name="imie"><br>
+                Nazwisko: <input type="text" name="nazwisko"><br>
+                <input type="submit" value="Dodaj" name="submit">
             </form>
-
             <br><br>
         </div>
         </div>
@@ -53,20 +51,23 @@
             die("Błąd połączenia: " . $conn->connect_error);
         }
 
-        $tytul =  $_POST['tytul'];
-        $rezyser = $_POST['rezyser'];
-        $czas_trwania =  $_POST['czas_trwania'];
-
-        $sql = "INSERT INTO filmy (tytul, rezyser, czas_trwania)  VALUES ('$tytul', '$rezyser','$czas_trwania')";
-
-        if(mysqli_query($conn, $sql)){
-            echo "Rekordy dodane.";
-          } else{
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
-          }
+    
+        if(isset($_POST['submit'])){
+        $imie = $_POST['imie'];
+        $nazwisko  = $_POST['nazwisko'];
         
 
+          $imie =  $_POST['imie'];
+          $nazwisko = $_POST['nazwisko'];
+  
+          $sql1 = "INSERT INTO sprzedawcy (imie, nazwisko)  VALUES ('$imie', '$nazwisko')";
+  
+          if(mysqli_query($conn, $sql1)){
+              echo "Rekordy dodane.";
+            } else{
+              echo "ERROR: Could not able to execute $sql1. " . mysqli_error($conn);
+            }
+        }
     
 
 ?>
-

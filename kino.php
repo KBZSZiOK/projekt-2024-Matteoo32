@@ -13,9 +13,9 @@
         </header>
         <nav>
         <ul id="menu">
-            <li class="menu"><a href="info.php">Dodaj informacje</a></li>
+            <li class="menu"><a href="info.php">Dodaj nowy film</a></li>
+            <li class="menu"><a href="info2.php">Dodaj sprzedawce</a></li>
             <li class="menu"><a href="kino.php">Informacje</a></li>
-            <li class="menu"><a href="kontakt.html">Kontakt</a></li>
             <li class="menu"><a href="mailto: mateusz.mering.mm@gmail.com">Wyślij maila</a></li>
             
         </ul>
@@ -57,7 +57,7 @@
 
 
     if ($_POST["info"] == "seanse") {
-        $sql = "SELECT id, termin, sala_id, film_id, liczba_wolnych_miejsc FROM seanse";
+        $sql = "SELECT * FROM seanse";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
          while ($row = $result->fetch_assoc()) {
