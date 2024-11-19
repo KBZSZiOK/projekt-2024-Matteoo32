@@ -33,40 +33,12 @@
 
             <br><br>
         </div>
-        <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $database = "kino_4tig1"; 
-        $conn = new mysqli($servername, $username, $password, $database);
-    
-        if ($conn->connect_error) {
-            die("Błąd połączenia: " . $conn->connect_error);
-        }
-
-        $tytul =  $_POST['tytul'];
-        $rezyser = $_POST['rezyser'];
-        $czas_trwania =  $_POST['czas_trwania'];
-
-        $sql = "INSERT INTO filmy (tytul, rezyser, czas_trwania)  VALUES ('$tytul', '$rezyser','$czas_trwania')";
-
-        if(mysqli_query($conn, $sql)){
-            echo "Rekordy dodane.";
-          } else{
-            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
-          }
         
 
-    
-
-?>
-
-
-        </div>
-        <div id="animacja"><br><br><br><br>
-        <marquee scrollamount="3" scrolldelay="16"><p id="anim">
-            
-Litwo! Ojczyzno moja! ty jesteś jak zdrowie.
+        </div><br><br><br><br>
+        <div id="animacja">
+        <p class="para" id="para1"> 
+        Litwo! Ojczyzno moja! ty jesteś jak zdrowie.
 
 Ile cię trzeba cenić, ten tylko się dowie,
 
@@ -111,14 +83,42 @@ Gdzie panieńskim rumieńcem dzięcielina pała,
 A wszystko przepasane, jakby wstęgą, miedzą
 
 Zieloną, na niej z rzadka ciche grusze siedzą.
-</p>
-</marquee>
+        </p> 
         </div>
         <footer>
         Stronę wykonał Mateusz
         </footer>
 
     </div>
+
+    <script src="javascript.js"></script>
 </body>
 </html>
 
+<?php
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $database = "kino_4tig1"; 
+        $conn = new mysqli($servername, $username, $password, $database);
+    
+        if ($conn->connect_error) {
+            die("Błąd połączenia: " . $conn->connect_error);
+        }
+
+        $tytul =  $_POST['tytul'];
+        $rezyser = $_POST['rezyser'];
+        $czas_trwania =  $_POST['czas_trwania'];
+
+        $sql = "INSERT INTO filmy (tytul, rezyser, czas_trwania)  VALUES ('$tytul', '$rezyser','$czas_trwania')";
+
+        if(mysqli_query($conn, $sql)){
+            echo "Rekordy dodane.";
+          } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+          }
+        
+
+    
+
+?>

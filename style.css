@@ -86,3 +86,19 @@ h1 {
     background-color: aliceblue;
     font-size: 20px;
   }
+
+
+  #animacja{
+    overflow: hidden;
+    background-color: white;
+    top: 200px;
+    width: 100%;
+  }
+
+  .para{ 
+    color: black; 
+    font-weight: bold; 
+    white-space: nowrap; 
+    clear: both; 
+    float: left; 
+  } 

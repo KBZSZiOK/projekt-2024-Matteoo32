@@ -122,11 +122,10 @@
     }
 
 ?>
-        </div>
+        </div><br><br><br><br><br><br><br><br>
         <div id="animacja">
-        <marquee scrollamount="3" scrolldelay="16"><p id="anim">
-            
-Litwo! Ojczyzno moja! ty jesteś jak zdrowie.
+        <p class="para" id="para1"> 
+        Litwo! Ojczyzno moja! ty jesteś jak zdrowie.
 
 Ile cię trzeba cenić, ten tylko się dowie,
 
@@ -171,8 +170,7 @@ Gdzie panieńskim rumieńcem dzięcielina pała,
 A wszystko przepasane, jakby wstęgą, miedzą
 
 Zieloną, na niej z rzadka ciche grusze siedzą.
-</p>
-</marquee>
+        </p> 
         </div>
         <br>
         <footer>
@@ -180,6 +178,7 @@ Zieloną, na niej z rzadka ciche grusze siedzą.
         </footer>
 
     </div>
+    <script src="javascript.js"></script>
 </body>
 </html>
 
